@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Para Você — Uma Declaração</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg1: #0f172a; /* deep blue */
+--bg2: #0b3d91; /* azure */
+--accent: #64b5ff;
+--gold: #ffd89b;
+--glass: rgba(255,255,255,0.06);
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Inter,system-ui,Arial;color:#e6f0ff;background:linear-gradient(135deg,var(--bg1),var(--bg2));display:flex;align-items:center;justify-content:center;padding:32px}
+.card{width:100%;max-width:980px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:20px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.6);backdrop-filter:blur(6px);}
+header{display:flex;gap:20px;align-items:center}
+.avatar{width:120px;height:120px;border-radius:16px;overflow:hidden;flex:0 0 120px;border:3px solid rgba(255,255,255,0.06)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+h1{font-family:'Great Vibes',cursive;color:var(--gold);margin:0;font-size:44px}
+p.lead{margin:4px 0 0;font-size:16px;color:#dbeeff}
+.content{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:22px}
+.box{background:var(--glass);padding:18px;border-radius:14px}
+.message{font-size:18px;line-height:1.6;color:#ecf8ff}
+.typewriter{font-style:italic;color:var(--accent);height:60px}
+.buttons{display:flex;gap:12px;margin-top:12px}
+.btn{padding:10px 14px;border-radius:10px;border:none;background:rgba(255,255,255,0.06);color:#fff;cursor:pointer;font-weight:600}
+.btn.heart{background:linear-gradient(90deg,#ff7aa2,#ffcf6b);color:#0a0a0a}
+.notes{display:flex;flex-direction:column;gap:10px}
+.note{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+footer{margin-top:18px;text-align:center;color:#bcd6ff;font-size:14px}
+@media(max-width:880px){.content{grid-template-columns:1fr;}.avatar{display:none}.card{padding:18px}h1{font-size:36px}}
+/* little heart animation */
+.floating-heart{position:fixed;right:20px;bottom:20px;width:64px;height:64px;border-radius:999px;display:grid;place-items:center;background:linear-gradient(180deg,#ff7aa2,#ffcf6b);box-shadow:0 6px 20px rgba(0,0,0,0.25);cursor:pointer}
+.heart-emoji{font-size:26px;transform:translateY(0);transition:transform .24s ease}
+.floating-heart:active .heart-emoji{transform:translateY(-6px) scale(1.08)}
+</style>
+</head>
+<body>
+<div class="card" role="main">
+<header>
+<div class="avatar">
+<!-- EDIT HERE: substitute the image src with a photo of you two or a romantic image -->
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="Foto de vocês">
+</div>
+<div>
+<h1>Para você, meu amor</h1>
+<p class="lead">Uma pequena página para dizer o quanto você é especial — criada especialmente para você.</p>
+<div class="buttons">
+<button class="btn" id="revealBtn">Ler agora</button>
+<button class="btn heart" id="surpriseBtn">Uma surpresa ♥</button>
+</div>
+</div>
+</header>
+
+
+<div class="content">
+<div>
+<div class="box">
+<div class="typewriter" id="typewriter">Clique em "Ler agora" para ver minha declaração.</div>
+<div class="message" id="messageArea" style="display:none;">
+<!-- EDIT HERE: substitute the paragraphs below with your personal text -->
+<p>Meu amor, desde o dia em que te conheci, minha vida ganhou cor. Você é a calma nas minhas tempestades e a maior alegria dos meus dias.</p>
+<p>Quero construir memórias com você, cuidar do seu sorriso e estar ao seu lado em todas as pequenas e grandes aventuras.</p>
+<p>Obrigado por ser quem você é — por sua paciência, carinho e por acreditar em nós. Eu te amo hoje e sempre.</p>
+</div>
+</div>
+
+
+<div style="height:16px"></div>
+
+
+<div class="box">
+<h3 style="margin:0 0 10px 0;color:var(--gold)">Meus pequenos votos</h3>
+<div class="notes" id="notesList">
+<!-- EDIT HERE: replace or add as many notes as you like -->
+<div class="note">Prometo sempre te escutar com atenção.</div>
+<div class="note">Prometo fazer café nos domingos.</div>
+<div class="note">Prometo rir com você, mesmo das piadas ruins.</div>
+</div>
+</div>
+</div>
+
+
+<aside>
+<div class="box">
+<h3 style="margin-top:0;color:var(--gold)">Momentos</h3>
+<p style="margin:6px 0 12px 0;color:#dbeeff">Clique na foto para expandir. Use esse espaço para fotos ou pequenos vídeos.</p>
+<div style="border-radius:12px;overflow:hidden;cursor:pointer" id="photoCard">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="Momento" style="width:100%;height:220px;object-fit:cover;display:block">
+</div>
+</div>
